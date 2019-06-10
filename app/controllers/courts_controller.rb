@@ -26,6 +26,8 @@ class CourtsController < ApplicationController
   def create
     @court = Court.new(court_params)
 
+    @court.user = current_user
+
     respond_to do |format|
       if @court.save
         format.html { redirect_to @court, notice: 'Court was successfully created.' }
@@ -71,4 +73,5 @@ class CourtsController < ApplicationController
     def court_params
       params.require(:court).permit(:store_name, :address, :access, :tel, :store_email, :nearest_station, :latitude, :logitude, :hours, :parking, :url, :holiday)
     end
+
 end
