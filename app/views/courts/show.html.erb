@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @court.store_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @court.address %>
+</p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @court.access %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @court.tel %>
+</p>
+
+<p>
+  <strong>Store email:</strong>
+  <%= @court.store_email %>
+</p>
+
+<p>
+  <strong>Nearest station:</strong>
+  <%= @court.nearest_station %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @court.latitude %>
+</p>
+
+<p>
+  <strong>Logitude:</strong>
+  <%= @court.logitude %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @court.hours %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @court.parking %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @court.url %>
+</p>
+
+<p>
+  <strong>Holiday:</strong>
+  <%= @court.holiday %>
+</p>
+
+<%= link_to 'Edit', edit_court_path(@court) %> |
+<%= link_to 'Back', courts_path %>
