@@ -20,6 +20,9 @@ class CourtsController < ApplicationController
 
   # GET /courts/1/edit
   def edit
+    if current_user != @court.user
+      render status: 403
+    end  
   end
 
   # POST /courts
