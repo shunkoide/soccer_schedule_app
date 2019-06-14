@@ -47,6 +47,11 @@ class CourtsController < ApplicationController
   # PATCH/PUT /courts/1
   # PATCH/PUT /courts/1.json
   def update
+
+    if current_user != @court.user
+      render status: 403
+    end 
+
     respond_to do |format|
       if @court.update(court_params)
         format.html { redirect_to @court, notice: 'Court was successfully updated.' }
@@ -61,6 +66,11 @@ class CourtsController < ApplicationController
   # DELETE /courts/1
   # DELETE /courts/1.json
   def destroy
+
+    if current_user != @court.user
+      render status: 403
+    end 
+
     @court.destroy
     respond_to do |format|
       format.html { redirect_to courts_url, notice: 'Court was successfully destroyed.' }

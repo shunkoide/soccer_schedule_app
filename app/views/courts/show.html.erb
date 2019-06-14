@@ -25,7 +25,7 @@
 
 <p>
   <strong>EMAIL:</strong>
-  <%= @court.store_email %>
+  <%= link_to @court.store_email, "mailto:@court.store_email" %>
 </p>
 
 <p>
@@ -55,7 +55,7 @@
 
 <p>
   <strong>URL:</strong>
-  <%= @court.url %>
+  <%= link_to @court.url, @court.url, { :target => "_blank" } %>
 </p>
 
 <p>

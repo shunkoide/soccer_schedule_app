@@ -10,5 +10,4 @@ class Court < ApplicationRecord
     VALID_TEL_REGEX = /\A(((0(\d{1}[-(]?\d{4}|\d{2}[-(]?\d{3}|\d{3}[-(]?\d{2}|\d{4}[-(]?\d{1}|[5789]0[-(]?\d{4})[-)]?)|\d{1,4}\-?)\d{4}|0120[-(]?\d{3}[-)]?\d{3})\z/
     validates :tel, format: { with: VALID_TEL_REGEX }, allow_blank: true
 
-
 end
