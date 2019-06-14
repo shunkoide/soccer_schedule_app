@@ -1,5 +1,6 @@
 class CourtsController < ApplicationController
   before_action :set_court, only: [:show, :edit, :update, :destroy]
+  before_action :can_edit?, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
   # GET /courts
@@ -76,6 +77,10 @@ class CourtsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def court_params
       params.require(:court).permit(:store_name, :address, :access, :tel, :store_email, :nearest_station, :latitude, :logitude, :hours, :parking, :url, :holiday)
+    end
+
+    def can_edit?
+      render "errors/403", status: 403 if current_user != @court.user
     end
 
 end
