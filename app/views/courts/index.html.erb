@@ -1,0 +1,47 @@
+<h1>コート一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>店舗名</th>
+      <th>住所</th>
+      <th>アクセス</th>
+      <th>tel</th>
+      <th>email</th>
+      <th>最寄り駅</th>
+      <th>Latitude</th>
+      <th>Logitude</th>
+      <th>営業時間</th>
+      <th>駐車場</th>
+      <th>url</th>
+      <th>定休日</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courts.each do |court| %>
+      <tr>
+        <td><%= court.store_name %></td>
+        <td><%= court.address %></td>
+        <td><%= court.access %></td>
+        <td><%= court.tel %></td>
+        <td><%= court.store_email %></td>
+        <td><%= court.nearest_station %></td>
+        <td><%= court.latitude %></td>
+        <td><%= court.logitude %></td>
+        <td><%= court.hours %></td>
+        <td><%= court.parking %></td>
+        <td><%= court.url %></td>
+        <td><%= court.holiday %></td>
+        <td><%= link_to '詳細', court %></td>
+        <td><%= link_to '編集', edit_court_path(court) %></td>
+        <td><%= link_to '削除', court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'コート登録', new_court_path %>

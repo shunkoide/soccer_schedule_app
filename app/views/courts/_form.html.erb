@@ -1,0 +1,77 @@
+<%= form_with(model: court, local: true) do |form| %>
+  <% if court.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(court.errors.count, "error") %> prohibited this court from being saved:</h2>
+
+      <ul>
+      <% court.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">    
+    <%= form.label :store_name, "店舗名(必須)" %>
+    <%= form.text_field :store_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :access, "アクセス" %>
+    <%= form.text_field :access %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tel, "tel" %>
+    <%= form.text_field :tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :store_email, "email" %>
+    <%= form.text_field :store_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nearest_station, "最寄り駅" %>
+    <%= form.text_field :nearest_station %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logitude %>
+    <%= form.text_field :logitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hours, "営業時間" %>
+    <%= form.text_field :hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking, "駐車場" %>
+    <%= form.check_box :parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, type:'url', placeholder:"https://example.com" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :holiday, "定休日" %>
+    <%= form.text_field :holiday %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
