@@ -1,0 +1,44 @@
+<%= form_with(model: plan, local: true) do |form| %>
+  <% if plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user, "企画者" %>
+    <%= form.text_field :user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :court,"コート" %>
+    <%= form.select :court, [["Yコート", "Yコート"], ["Cコート", "Cコート"]] %>
+
+
+  </div>
+
+  <div class="field">
+    <%= form.label :max_member, "募集人数" %>
+    <%= form.number_field :max_member %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_date, "日時" %>
+    <%= form.date_select :event_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "企画説明" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

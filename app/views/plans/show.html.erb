@@ -1,0 +1,27 @@
+<p>
+  <strong>企画者:</strong>
+  <%= @plan.user %>
+</p>
+
+<p>
+  <strong>コート:</strong>
+  <%= @plan.court %>
+</p>
+
+<p>
+  <strong>募集人数:</strong>
+  <%= @plan.max_member %>
+</p>
+
+<p>
+  <strong>日時:</strong>
+  <%= @plan.event_date %>
+</p>
+
+<p>
+  <strong>企画説明:</strong>
+  <%= @plan.description %>
+</p>
+
+<%= link_to '編集', edit_plan_path(@plan) %> |
+<%= link_to '戻る', plans_path %>
