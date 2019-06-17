@@ -10,5 +10,5 @@ class Court < ApplicationRecord
     validates :store_email, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX },
                                 allow_blank: true
                       
-    validates :url, format: { with: /\A^https?:\/\/\z/ }, allow_blank: true            
+    validates :url, format: { with: /\A^https?:\/\// }, allow_blank: true            
 end
