@@ -15,8 +15,8 @@
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= plan.user.id %></td>
-        <td><%= plan.court.id %></td>
+        <td><%= plan.user %></td>
+        <td><%= plan.court %></td>
         <td><%= plan.max_member %></td>
         <td><%= plan.event_date %></td>
         <td><%= plan.description %></td>

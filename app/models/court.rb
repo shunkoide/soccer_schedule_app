@@ -1,7 +1,6 @@
 class Court < ApplicationRecord
     belongs_to :user
-
-
+     
     validates :store_name, presence: true
 
     VALID_TEL_REGEX = /0[1-9]\d{0,3}[-(]\d{1,4}[-)]\d{4}/

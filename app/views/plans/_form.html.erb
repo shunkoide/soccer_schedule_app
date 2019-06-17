@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id,"企画者" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :user, "企画者" %>
+    <%= form.text_field :user %>
   </div>
 
   <div class="field">
-    <%= form.label :court_id,"コート" %>
-    <%= form.text_field :court_id %>
+    <%= form.label :court,"コート" %>
+    <%= form.select :court, [["Yコート", "Yコート"], ["Cコート", "Cコート"]] %>
+
+
   </div>
 
   <div class="field">
