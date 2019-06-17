@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :user_id,"企画者" %>
     <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :court_id %>
+    <%= form.label :court_id,"コート" %>
     <%= form.text_field :court_id %>
   </div>
 
   <div class="field">
-    <%= form.label :max_member %>
+    <%= form.label :max_member, "募集人数" %>
     <%= form.number_field :max_member %>
   </div>
 
   <div class="field">
-    <%= form.label :event_date %>
+    <%= form.label :event_date, "日時" %>
     <%= form.date_select :event_date %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, "企画説明" %>
     <%= form.text_area :description %>
   </div>
 

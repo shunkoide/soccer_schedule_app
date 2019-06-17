@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>User:</strong>
+  <strong>企画者:</strong>
   <%= @plan.user %>
 </p>
 
 <p>
-  <strong>Court:</strong>
+  <strong>コート:</strong>
   <%= @plan.court %>
 </p>
 
 <p>
-  <strong>Max member:</strong>
+  <strong>募集人数:</strong>
   <%= @plan.max_member %>
 </p>
 
 <p>
-  <strong>Event date:</strong>
+  <strong>日時:</strong>
   <%= @plan.event_date %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>企画説明:</strong>
   <%= @plan.description %>
 </p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<%= link_to '編集', edit_plan_path(@plan) %> |
+<%= link_to '戻る', plans_path %>

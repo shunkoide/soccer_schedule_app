@@ -1,5 +1,7 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
+  before_action :can_edit?, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /plans
   # GET /plans.json
@@ -25,6 +27,8 @@ class PlansController < ApplicationController
   # POST /plans.json
   def create
     @plan = Plan.new(plan_params)
+
+    @plan.user = current_user
 
     respond_to do |format|
       if @plan.save
@@ -70,5 +74,9 @@ class PlansController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
       params.require(:plan).permit(:user_id, :court_id, :max_member, :event_date, :description)
+    end
+
+    def can_edit?
+      render "errors/403", status: 403 if current_user != @plan.user
     end
 end
